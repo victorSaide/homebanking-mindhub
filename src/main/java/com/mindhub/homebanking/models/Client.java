@@ -9,13 +9,13 @@ import javax.persistence.Id;
 
 @Entity
 public class Client {
-    // attributes o properties
+    // attributes or properties
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native",strategy = "native")
     private Long id;
-    private String name;
-    private String lastname;
+    private String firstName;
+    private String lastName;
     private String email;
 
     // getters and setters
@@ -23,20 +23,18 @@ public class Client {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLastname() {
-        return lastname;
-    }
+    public String getLastName() { return lastName; }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -49,9 +47,9 @@ public class Client {
 
     // constructors
     public Client(){}
-    public Client(String name, String lastname, String email) {
-        this.name = name;
-        this.lastname = lastname;
+    public Client(String firstName, String lastName, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
     }
 }
